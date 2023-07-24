@@ -30,23 +30,23 @@ const NavItem = () => {
     },
     {
       title: "About",
-      url: "/#about",
+      url: "#about",
     },
     {
       title: "Services",
-      url: "/#services",
+      url: "#services",
     },
     {
       title: "Breeds",
-      url: "/#breeds",
+      url: "#breeds",
     },
     {
       title: "Shop",
-      url: "/#shop",
+      url: "#shop",
     },
     {
       title: "Gallery",
-      url: "/#gallery",
+      url: "#gallery",
     },
   ];
 
