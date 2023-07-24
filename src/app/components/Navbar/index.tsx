@@ -1,7 +1,7 @@
 import React from "react";
 import NavItem from "./navItem";
 
-const index: React.FC = (): any => {
+const Navbar: React.FC = (): any => {
   return (
     <>
       <div className="h-[53px] bg-primary">
@@ -19,4 +19,4 @@ const index: React.FC = (): any => {
   );
 };
 
-export default index;
+export default Navbar;

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
 import SeachWithFav from "./SeachWithFav";
@@ -8,6 +8,21 @@ import Cart from "../Cart";
 
 const NavItem = () => {
   const [navOpen, setNavOpen] = useState<boolean>(false);
+  const [showBackground, setShowBackground] = useState<boolean>(false);
+  const TOP_OFFSET: number = 150;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= TOP_OFFSET) {
+        setShowBackground(true);
+      } else {
+        setShowBackground(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const nav_Items: { title: string; url: string }[] = [
     {
       title: "Home",
@@ -36,7 +51,11 @@ const NavItem = () => {
   ];
 
   return (
-    <div className=" px-12 lg:px-[80px] h-[102px] bg-background z-10 sticky top-0">
+    <div
+      className={`px-8 lg:px-[80px] h-[102px] duration-300 ease-in-out bg-background z-10 sticky top-0 ${
+        showBackground ? "drop-shadow-xl" : ""
+      }`}
+    >
       <div className=" hidden h-full xl:flex items-center justify-between ">
         <p className=" font-semibold uppercase text-lg md:text-xl lg:text-2xl">
           Your Logo
@@ -74,7 +93,7 @@ const NavItem = () => {
           navOpen ? "fixed" : "hidden"
         } w-full h-screen  bg-black/70 top-0 left-0 z-20`}
       >
-        <div className=" w-[80%] relative flex flex-col items-center gap-7 h-full bg-background ease-in duration-1000">
+        <div className=" w-full relative flex flex-col items-center gap-7 h-full bg-background ease-in duration-1000">
           <div
             onClick={() => {
               setNavOpen(!navOpen);
