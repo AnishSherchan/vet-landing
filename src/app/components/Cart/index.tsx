@@ -5,7 +5,7 @@ const index = ({ items }: CartProps) => {
   return (
     <div className="cursor-pointer flex items-center gap-2 border border-primary rounded-lg  px-3 py-2">
       <Icon icon="mdi:cart" className=" text-primary" width={19} />
-      <p>{items} item</p>
+      <p className=" text-[16px]">{items} item</p>
     </div>
   );
 };

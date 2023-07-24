@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 function About(): any {
   return (
-    <div className=" mt-[155px] px-10 xl:px-24" id="about">
+    <div className="  px-10 xl:px-24" id="about">
       <div className=" flex gap-24 flex-col justify-center items-center xl:flex-row xl:items-start">
         <Image src="/About_Hero.svg" alt="About us" width={524} height={605} />
         <div className=" flex flex-col xl:mt-[84px] gap-10">
