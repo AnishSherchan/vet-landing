@@ -6,7 +6,7 @@ const Navbar: React.FC = (): any => {
     <>
       <div className="h-[53px] bg-primary">
         <div className="flex flex-col items-center text-center h-full justify-center">
-          <p className=" text-background p-3">
+          <p className=" text-background p-3 text-[16px]">
             Call us for Veterinary Support:{" "}
             <a className=" cursor-pointer" href="tel:+977-9861859764">
               +977-9861859764
